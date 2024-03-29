@@ -38,7 +38,7 @@ Index: serf.vcxproj
 ===================================================================
 --- serf.vcxproj	(nonexistent)
 +++ serf.vcxproj	(working copy)
-@@ -0,0 +1,107 @@
+@@ -0,0 +1,95 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 +  <ItemGroup Label="ProjectConfigurations">
@@ -75,21 +75,9 @@ Index: serf.vcxproj
 +  </PropertyGroup>
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 +  <PropertyGroup Label="UserMacros" />
-+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-+    <OutDir>out\$(Configuration)</OutDir>
-+    <UseStructuredOutput>true</UseStructuredOutput>
-+  </PropertyGroup>
-+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-+    <OutDir>out\$(Configuration)</OutDir>
-+    <UseStructuredOutput>true</UseStructuredOutput>
-+  </PropertyGroup>
-+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-+    <OutDir>out\$(Configuration)</OutDir>
-+    <UseStructuredOutput>true</UseStructuredOutput>
-+  </PropertyGroup>
-+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-+    <OutDir>out\$(Configuration)</OutDir>
-+    <UseStructuredOutput>true</UseStructuredOutput>
++  <PropertyGroup>
++      <OutDir>out\$(Configuration)-$(PlatformTarget)</OutDir>
++      <UseStructuredOutput>true</UseStructuredOutput>
 +  </PropertyGroup>
 +  <ItemDefinitionGroup>
 +    <ClCompile>
