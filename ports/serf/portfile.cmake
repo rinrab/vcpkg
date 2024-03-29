@@ -14,7 +14,9 @@ vcpkg_extract_source_archive_ex(
 vcpkg_build_msbuild(
     PROJECT_PATH ${SOURCE_PATH}/serf.sln
     TARGET serf
-    OPTIONS /p:CURRENT_INSTALLED_DIR=${CURRENT_INSTALLED_DIR}
+    OPTIONS
+        /p:CURRENT_INSTALLED_DIR=${CURRENT_INSTALLED_DIR}
+        /p:VCPKG_CRT_LINKAGE=${VCPKG_CRT_LINKAGE}
 )
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")

@@ -38,7 +38,7 @@ Index: serf.vcxproj
 ===================================================================
 --- serf.vcxproj	(nonexistent)
 +++ serf.vcxproj	(working copy)
-@@ -0,0 +1,95 @@
+@@ -0,0 +1,97 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 +  <ItemGroup Label="ProjectConfigurations">
@@ -76,8 +76,8 @@ Index: serf.vcxproj
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 +  <PropertyGroup Label="UserMacros" />
 +  <PropertyGroup>
-+      <OutDir>out\$(Configuration)-$(PlatformTarget)</OutDir>
-+      <UseStructuredOutput>true</UseStructuredOutput>
++    <OutDir>out\$(Configuration)-$(PlatformTarget)</OutDir>
++    <UseStructuredOutput>true</UseStructuredOutput>
 +  </PropertyGroup>
 +  <ItemDefinitionGroup>
 +    <ClCompile>
@@ -85,8 +85,10 @@ Index: serf.vcxproj
 +      <SDLCheck>true</SDLCheck>
 +      <ConformanceMode>true</ConformanceMode>
 +      <AdditionalIncludeDirectories>$(CURRENT_INSTALLED_DIR)\include;.</AdditionalIncludeDirectories>
-+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
-+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
++      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Debug-static'">MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Debug-dynamic'">MultiThreadedDebugDLL</RuntimeLibrary>
++      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Release-static'">MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Release-dynamic'">MultiThreadedDLL</RuntimeLibrary>
 +    </ClCompile>
 +    <Link>
 +      <GenerateDebugInformation>true</GenerateDebugInformation>
