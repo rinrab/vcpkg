@@ -38,7 +38,7 @@ Index: serf.vcxproj
 ===================================================================
 --- serf.vcxproj	(nonexistent)
 +++ serf.vcxproj	(working copy)
-@@ -0,0 +1,97 @@
+@@ -0,0 +1,91 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 +  <ItemGroup Label="ProjectConfigurations">
@@ -60,7 +60,6 @@ Index: serf.vcxproj
 +    </ProjectConfiguration>
 +  </ItemGroup>
 +  <PropertyGroup Label="Globals">
-+    <VCProjectVersion>17.0</VCProjectVersion>
 +    <Keyword>Win32Proj</Keyword>
 +    <ProjectGuid>{1e26c6db-2b29-447b-a1ff-65f6256825ef}</ProjectGuid>
 +    <RootNamespace>serf</RootNamespace>
@@ -69,29 +68,24 @@ Index: serf.vcxproj
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
 +  <PropertyGroup Label="Configuration">
 +    <ConfigurationType>StaticLibrary</ConfigurationType>
-+    <UseDebugLibraries>true</UseDebugLibraries>
++  </PropertyGroup>
++  <PropertyGroup>
 +    <PlatformToolset>v143</PlatformToolset>
-+    <CharacterSet>Unicode</CharacterSet>
 +  </PropertyGroup>
 +  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 +  <PropertyGroup Label="UserMacros" />
 +  <PropertyGroup>
 +    <OutDir>out\$(Configuration)-$(PlatformTarget)</OutDir>
-+    <UseStructuredOutput>true</UseStructuredOutput>
 +  </PropertyGroup>
 +  <ItemDefinitionGroup>
 +    <ClCompile>
-+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
-+      <SDLCheck>true</SDLCheck>
-+      <ConformanceMode>true</ConformanceMode>
-+      <AdditionalIncludeDirectories>$(CURRENT_INSTALLED_DIR)\include;.</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(CURRENT_INSTALLED_DIR)\include;.\</AdditionalIncludeDirectories>
 +      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Debug-static'">MultiThreadedDebug</RuntimeLibrary>
 +      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Debug-dynamic'">MultiThreadedDebugDLL</RuntimeLibrary>
 +      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Release-static'">MultiThreaded</RuntimeLibrary>
 +      <RuntimeLibrary Condition="'$(Configuration)-$(VCPKG_CRT_LINKAGE)'=='Release-dynamic'">MultiThreadedDLL</RuntimeLibrary>
 +    </ClCompile>
 +    <Link>
-+      <GenerateDebugInformation>true</GenerateDebugInformation>
 +      <AdditionalLibraryDirectories>$(CURRENT_INSTALLED_DIR)\lib</AdditionalLibraryDirectories>
 +    </Link>
 +  </ItemDefinitionGroup>
