@@ -25,3 +25,5 @@ vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
 # Header files
 file(GLOB_RECURSE INCLUDES "${SOURCE_PATH}/*.h")
 file(COPY ${INCLUDES} DESTINATION "${CURRENT_PACKAGES_DIR}/include")
+
+configure_file("${CURRENT_PORT_DIR}/serf.pc.in" "${CURRENT_PACKAGES_DIR}/lib/pkgconfig/serf.pc" @ONLY)
