@@ -27,5 +27,5 @@ vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
 file(GLOB_RECURSE INCLUDES "${SOURCE_PATH}/*.h")
 file(COPY ${INCLUDES} DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 
-configure_file("${CURRENT_PORT_DIR}/serf.pc.in" "${CURRENT_PACKAGES_DIR}/lib/pkgconfig/serf.pc" @ONLY)
+configure_file("${SOURCE_PATH}/build/serf.pc.in" "${CURRENT_PACKAGES_DIR}/lib/pkgconfig/serf.pc" @ONLY)
 configure_file("${CMAKE_CURRENT_LIST_DIR}/usage" "${CURRENT_PACKAGES_DIR}/share/${PORT}/usage" COPYONLY)
