@@ -35,6 +35,4 @@ vcpkg_install_msbuild(
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
 
-# Header files
-file(GLOB_RECURSE SVN_INCLUDES ${SOURCE_PATH}/subversion/include/*.h)
-file(COPY ${SVN_INCLUDES} DESTINATION ${CURRENT_PACKAGES_DIR}/include)
+file(COPY "${SOURCE_PATH}/subversion/include" DESTINATION "${CURRENT_PACKAGES_DIR}")
