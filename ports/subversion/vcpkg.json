@@ -6,8 +6,8 @@
   "dependencies": [
     "apr",
     "apr-util",
+    "serf",
     "sqlite3",
-    "zlib",
-    "serf"
+    "zlib"
   ]
 }
