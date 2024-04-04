@@ -38,7 +38,7 @@ Index: serf.vcxproj
 ===================================================================
 --- serf.vcxproj	(nonexistent)
 +++ serf.vcxproj	(working copy)
-@@ -0,0 +1,91 @@
+@@ -0,0 +1,92 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 +  <ItemGroup Label="ProjectConfigurations">
@@ -76,6 +76,7 @@ Index: serf.vcxproj
 +  <PropertyGroup Label="UserMacros" />
 +  <PropertyGroup>
 +    <OutDir>out\$(Configuration)-$(PlatformTarget)</OutDir>
++    <TargetName>serf-1</TargetName>
 +  </PropertyGroup>
 +  <ItemDefinitionGroup>
 +    <ClCompile>
