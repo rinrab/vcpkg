@@ -9,9 +9,14 @@ vcpkg_extract_source_archive_ex(
     ARCHIVE "${ARCHIVE}"
     PATCHES
         "fix-serfdir.patch"
+        "fix-expatdir.patch"
 )
 
 vcpkg_find_acquire_program(PYTHON3)
+
+if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
+  set(BUILD_MODE --with-static-apr --with-static-openssl --disable-shared)
+endif()
 
 vcpkg_execute_build_process(
     COMMAND ${PYTHON3} gen-make.py
@@ -22,6 +27,7 @@ vcpkg_execute_build_process(
         --with-serf=${CURRENT_INSTALLED_DIR}
         --with-sqlite=${CURRENT_INSTALLED_DIR}
         --with-zlib=${CURRENT_INSTALLED_DIR}
+        ${BUILD_MODE}
     WORKING_DIRECTORY "${SOURCE_PATH}"
     LOGNAME "gen-make"
 )
