@@ -36,7 +36,6 @@ vcpkg_install_msbuild(
     SOURCE_PATH "${SOURCE_PATH}"
     PROJECT_SUBPATH "subversion_vcnet.sln"
     TARGET "__ALL__"
-    PLATFORM ${VCPKG_TARGET_ARCHITECTURE}
 )
 
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
