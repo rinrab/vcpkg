@@ -2,10 +2,10 @@ APR provides CMake targets whose names will start with the 'lib' prefix in share
 
   find_package(apr CONFIG REQUIRED)
 
-  # Use for shared configuration
+  # Use the shared configuration
   target_link_libraries(main PRIVATE apr::apr-1 apr::libaprapp-1)
 
-  # Use for static configuration
+  # Use the static configuration
   target_link_libraries(main PRIVATE apr::apr-1 apr::aprapp-1)
 
 To ensure compatibility with both static and shared configurations:
